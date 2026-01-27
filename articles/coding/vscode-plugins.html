@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Лучшие плагины для VS Code в 2025 году</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Подборка лучших плагинов для Visual Studio Code: Python, Web, Git, оформление и производительность.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #f6f7f9;
+      color: #1c1c1c;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    article {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 22px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin: 15px 0;
+      color: #374151;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .views {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+<main class="container">
+  <article>
+    <h1>Лучшие плагины для VS Code в 2025 году</h1>
+
+    <div class="meta">
+      15.12.2025 · Coding · VS Code
+    </div>
+
+    <p>
+      Visual Studio Code — один из самых популярных редакторов кода в мире.
+      Его главная сила — огромное количество расширений, которые делают разработку
+      быстрее, удобнее и приятнее.
+    </p>
+
+    <h2>🔹 Must-have плагины</h2>
+    <ul>
+      <li><strong>Prettier</strong> — автоматическое форматирование кода</li>
+      <li><strong>ESLint</strong> — поиск ошибок и проблем в JavaScript/TypeScript</li>
+      <li><strong>GitLens</strong> — расширенная работа с Git</li>
+    </ul>
+
+    <h2>🔹 Для Python-разработчиков</h2>
+    <ul>
+      <li><strong>Python</strong> (Microsoft) — автодополнение, отладка</li>
+      <li><strong>Pylance</strong> — быстрый анализ типов</li>
+      <li><strong>Black Formatter</strong> — форматирование Python-кода</li>
+    </ul>
+
+    <h2>🔹 Для веб-разработки</h2>
+    <ul>
+      <li><strong>Live Server</strong> — мгновенный предпросмотр сайта</li>
+      <li><strong>Auto Rename Tag</strong> — автопереименование HTML-тегов</li>
+      <li><strong>Tailwind CSS IntelliSense</strong> — подсказки для Tailwind</li>
+    </ul>
+
+    <h2>🔹 Визуал и удобство</h2>
+    <ul>
+      <li><strong>Material Icon Theme</strong> — красивые иконки файлов</li>
+      <li><strong>One Dark Pro</strong> — популярная тёмная тема</li>
+      <li><strong>Error Lens</strong> — подсветка ошибок прямо в коде</li>
+    </ul>
+
+    <h2>Итог</h2>
+    <p>
+      VS Code можно превратить в полноценную IDE под любую задачу.
+      Главное — не перегружать редактор лишними расширениями и
+      выбирать плагины под свой стек.
+    </p>
+
+    <div id="viewsCounter" class="views"></div>
+
+    <a class="back" href="../../index.html">← Назад к новостям</a>
+  </article>
+</main>
+
+<script>
+  const key = 'views-vscode-plugins';
+  let views = localStorage.getItem(key) || 0;
+  views++;
+  localStorage.setItem(key, views);
+
+  document.getElementById('viewsCounter').innerHTML =
+    'Вы посмотрели статью: <strong>' + views + '</strong> раз';
+</script>
+
+</body>
+</html>

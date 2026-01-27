@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>DevNews — новости программирования и приложений</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="DevNews — свежие новости программирования, технологий и приложений.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #f6f7f9;
+      color: #1c1c1c;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .logo a {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    nav a:hover { color: #2563eb; }
+
+    .hero { padding: 40px 0 20px; }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #4b5563;
+      max-width: 600px;
+    }
+
+    .search-box {
+      margin: 20px 0;
+      max-width: 400px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+    }
+
+    .tag-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tag-filter button {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .tag-filter button.active {
+      background: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .news-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .news-meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      padding: 20px 0;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    footer a {
+      color: #6b7280;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    footer a:hover { color: #2563eb; }
+
+    .hero p {
+      color: #4b5563;
+      max-width: 600px;
+    }
+
+    .news-card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+        /* ТЕГИ */
+    .tag-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tag-filter button {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: Inter, sans-serif;
+    }
+
+    .tag-filter button:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .tag-filter button.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+
+        .news-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .news-card h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .news-card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="index.html">DevNews</a>
+    </div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="index.html">Новости</a>
+      <a href="about.html">О сайте</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="container">
+
+  <section class="hero">
+    <h1>Новости программирования и приложений</h1>
+    <p>Свежие и понятные новости из мира программирования, технологий, сервисов и приложений. </p>
+
+    <div class="search-box">
+      <input id="searchInput" placeholder="Поиск по статьям...">
+    </div>
+
+    <div class="tag-filter">
+      <button data-tag="all" class="active">Все</button>
+      <button data-tag="coding">Coding</button>
+      <button data-tag="linux">Linux</button>
+      <button data-tag="news">News</button>
+      <button data-tag="sites">Sites</button>
+      <button data-tag="browsers">Browsers</button>
+      <button data-tag="devnews">DevNews</button>
+    </div>
+  </section>
+
+  <section class="news-grid">
+
+      <a class="news-card"
+     href="articles/news/chrome-126-security.html"
+     data-tags="news browsers security ai">
+
+    <h3>Google представила Chrome 126 с упором на безопасность и ИИ</h3>
+
+    <p>
+      Новая версия Chrome получила усиленную защиту
+      и обновлённые инструменты для разработчиков.
+    </p>
+
+    <div class="news-meta">
+      22.01.2026 · News
+    </div>
+  </a>
+
+
+    <a class="news-card" data-tags="news sites" href="articles/news/gosuslugi-16-yo.html">
+      <h3>Госуслугам 16 лет!</h3>
+      <p>Ключевой цифровой платформе России исполнилось 16 лет!</p>
+      <div class="news-meta">15.12.2025 · News</div>
+    </a>
+
+    <a class="news-card" data-tags="coding python" href="articles/coding/best-python-code-editor.html">
+      <h3>Лучший редактор кода для Python</h3>
+      <p>VS Code, PyCharm и другие</p>
+      <div class="news-meta">15.12.2025 · Coding</div>
+    </a>
+
+    <a class="news-card" data-tags="linux coding" href="articles/all/linux-distros-comparison.html">
+      <h3>Сравнение дистрибутивов Linux</h3>
+      <p>Ubuntu, Fedora, Arch</p>
+      <div class="news-meta">14.12.2025 · Linux</div>
+    </a>
+
+    <a class="news-card" data-tags="coding" href="articles/coding/how-to-choose-programming-language.html">
+      <h3>Как выбрать язык программирования</h3>
+      <p>Python, JS, Java, C++</p>
+      <div class="news-meta">15.12.2025 · Coding</div>
+    </a>
+
+    <a class="news-card" data-tags="news sites" href="articles/all/yandex-history.html">
+      <h3>История Яндекса — как развивался отечественный продукт</h3>
+      <p>Путь от поиска до экосистемы</p>
+      <div class="news-meta">13.12.2025 · News</div>
+    </a>
+
+    <a class="news-card" data-tags="browsers sites" href="articles/all/best-browser.html">
+      <h3>Лучший браузер 2025</h3>
+      <p>Chrome, Firefox, Edge</p>
+      <div class="news-meta">15.12.2025 · Browsers</div>
+    </a>
+
+    <a class="news-card" data-tags="sites coding" href="articles/all/how-to-publish-site.html">
+      <h3>Как залить сайт в интернет</h3>
+      <p>GitHub Pages и хостинг</p>
+      <div class="news-meta">15.12.2025 · Sites</div>
+    </a>
+
+    <a class="news-card" data-tags="devnews news" href="articles/all/devnews-intro.html">
+      <h3>Знакомство с DevNews</h3>
+      <p>О чём сайт и для кого</p>
+      <div class="news-meta">15.12.2025 · DevNews</div>
+    </a>
+
+    <a class="news-card" data-tags="coding" href="articles/coding/vscode-plugins.html">
+      <h3>Лучшие плагины для VS Code</h3>
+      <p>Подборка расширений для удобной разработки</p>
+      <div class="news-meta">15.12.2025 · Coding</div>
+    </a>
+
+    <a class="news-card" data-tags="devnews news" href="articles/all/why-devnews.html">
+      <h3>Почему именно DevNews?</h3>
+      <p>Зачем мы сделали этот сайт и чем он отличается</p>
+      <div class="news-meta">15.12.2025 · DevNews</div>
+    </a>
+
+    <a class="news-card"
+    href="articles/news/extensions-and-gpt.html"
+    data-tags="news browsers security ai">
+
+      <h3>Расширения Chrome и Edge перехватывали переписки с ИИ</h3>
+
+      <p>
+        Популярные браузерные расширения могли передавать диалоги
+        пользователей с ChatGPT и Gemini третьим лицам.
+      </p>
+
+      <div class="news-meta">
+        16.12.2025 · News
+      </div>
+    </a>
+
+<a class="news-card"
+   href="articles/news/gpt5-for-devs.html"
+   data-tags="news ai coding">
+
+  <h3>OpenAI представила GPT-5 для разработчиков</h3>
+
+  <p>
+    GPT-5 получил улучшенное понимание кода,
+    ускоренный API и сниженное количество ошибок.
+  </p>
+
+  <div class="news-meta">
+    10.01.2026 · News
+  </div>
+</a>
+
+
+
+<style>
+  .site-age {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+</style>
+
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    © 2026 DevNews ·
+    <a href="about.html">О сайте</a>
+    <a href="privacy.html">Политика конфиденциальности</a>
+    <a href="terms.html">Пользовательское соглашение</a>
+    <a href="contacts.html">Контакты</a>
+    <span class="site-age" id="siteAge"></span>
+  </div>
+</footer>
+
+
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const cards = document.querySelectorAll('.news-card');
+  const buttons = document.querySelectorAll('.tag-filter button');
+
+  let activeTags = new Set();
+
+  function applyFilters() {
+    const text = searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+      const cardText = card.innerText.toLowerCase();
+      const cardTags = card.dataset.tags.split(' ');
+
+      const matchText = cardText.includes(text);
+      const matchTags =
+        activeTags.size === 0 ||
+        [...activeTags].every(t => cardTags.includes(t));
+
+      card.style.display = matchText && matchTags ? 'flex' : 'none';
+    });
+
+    const params = activeTags.size
+      ? '?tag=' + [...activeTags].join(',')
+      : '';
+    history.replaceState(null, '', params);
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag;
+
+      if (tag === 'all') {
+        activeTags.clear();
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      } else {
+        document.querySelector('[data-tag="all"]').classList.remove('active');
+        btn.classList.toggle('active');
+        btn.classList.contains('active')
+          ? activeTags.add(tag)
+          : activeTags.delete(tag);
+      }
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+
+  // URL tags
+  const params = new URLSearchParams(location.search);
+  if (params.has('tag')) {
+    params.get('tag').split(',').forEach(tag => {
+      const btn = document.querySelector(`[data-tag="${tag}"]`);
+      if (btn) {
+        btn.classList.add('active');
+        activeTags.add(tag);
+      }
+    });
+    document.querySelector('[data-tag="all"]').classList.remove('active');
+    applyFilters();
+  }
+</script>
+
+<script>
+  const launchDate = new Date(2026, 0, 27); // 27 января 2026
+  const today = new Date();
+
+  const diffTime = today - launchDate;
+  const days = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
+
+  document.getElementById('siteAge').textContent =
+    `Сайт существует: ${days} ${days === 1 ? 'день' : 'дней'}`;
+</script>
+
+
+</body>
+</html>

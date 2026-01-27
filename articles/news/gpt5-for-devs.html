@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenAI представила GPT-5 для разработчиков | DevNews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="OpenAI представила GPT-5 — новую модель для разработчиков с улучшенным пониманием кода и обновлённым API.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #f6f7f9;
+      color: #1c1c1c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .logo a {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    nav a:hover { color: #2563eb; }
+
+    .article-container {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+
+    article {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    article h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .article-meta {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .views {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    article h2 {
+      font-size: 22px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    article p {
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: #374151;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      padding: 20px 0;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    footer a {
+      color: #6b7280;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    footer a:hover { color: #2563eb; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../../index.html">DevNews</a>
+    </div>
+    <nav>
+      <a href="../../index.html">Главная</a>
+      <a href="../../index.html">Новости</a>
+      <a href="../../about.html">О сайте</a>
+      <a href="../../contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-container">
+  <article>
+
+    <a href="../../index.html" class="back-link">← Назад к новостям</a>
+
+    <h1>OpenAI представила GPT-5 для разработчиков</h1>
+
+    <div class="article-meta">
+      Новости · 10.01.2026
+    </div>
+
+    <div class="views" id="viewsCounter"></div>
+
+    <p>
+      Компания OpenAI официально представила модель GPT-5,
+      ориентированную в первую очередь на разработчиков
+      и профессиональное использование.
+    </p>
+
+    <p>
+      Новая версия получила значительные улучшения в работе
+      с кодом, логикой и API.
+    </p>
+
+    <h2>Что нового в GPT-5</h2>
+
+    <ul>
+      <li>улучшенное понимание программного кода;</li>
+      <li>меньше логических ошибок и «галлюцинаций»;</li>
+      <li>стабильные ответы в длинных диалогах;</li>
+      <li>повышенная скорость работы.</li>
+    </ul>
+
+    <h2>Улучшения API</h2>
+
+    <p>
+      GPT-5 получила обновлённый API с более предсказуемым
+      поведением и улучшенной документацией для разработчиков.
+    </p>
+
+    <h2>Для кого предназначена модель</h2>
+
+    <ul>
+      <li>веб- и backend-разработчики;</li>
+      <li>стартапы, использующие ИИ;</li>
+      <li>корпоративные сервисы;</li>
+      <li>инструменты для программирования.</li>
+    </ul>
+
+    <h2>Доступность</h2>
+
+    <p>
+      OpenAI начала поэтапное внедрение GPT-5 через API.
+      Массовый доступ ожидается в течение 2026 года.
+    </p>
+
+    <hr style="margin:40px 0 24px">
+
+    <section id="read-also">
+      <h2>Читайте также</h2>
+      <div class="also-grid" id="alsoGrid"></div>
+    </section>
+
+    <style>
+  #read-also h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+  }
+
+  .also-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 16px;
+    text-decoration: none;
+    color: #111827;
+    transition: transform .15s, box-shadow .15s;
+  }
+
+  .also-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  }
+
+  .also-card span {
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .also-card h3 {
+    margin: 6px 0 0;
+    font-size: 16px;
+  }
+</style>
+
+
+  </article>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 DevNews ·
+    <a href="../../about.html">О сайте</a>
+    <a href="../../privacy.html">Политика конфиденциальности</a>
+    <a href="../../terms.html">Пользовательское соглашение</a>
+    <a href="../../contacts.html">Контакты</a>
+  </div>
+</footer>
+
+<script>
+  const key = 'views-gpt5-for-devs';
+  let views = localStorage.getItem(key);
+
+  if (!views) views = 0;
+  views++;
+
+  localStorage.setItem(key, views);
+
+  document.getElementById('viewsCounter').innerHTML =
+    'Вы посмотрели статью: <strong>' + views + '</strong> раз';
+</script>
+
+<script>
+  const articles = [
+    {
+      title: 'Почему именно DevNews?',
+      date: 'Новости · 18.12.2025',
+      url: '../all/devnews-intro.html'
+    },
+    {
+      title: 'Лучшие дистрибутивы Linux',
+      date: 'Статьи · 14.12.2025',
+      url: '../all/linux-distros-comparison.html'
+    },
+    {
+      title: 'Как выбрать язык программирования',
+      date: 'Coding · 15.12.2025',
+      url: '../coding/how-to-choose-programming-language.html'
+    },
+    {
+      title: 'Лучший браузер в 2025',
+      date: 'Статьи · 15.12.2025',
+      url: '../all/best-browser.html'
+    },
+    {
+      title: 'История Яндекса',
+      date: 'Статьи · 13.12.2025',
+      url: '../all/yandex-history.html'
+    },
+    {
+      title: 'Как опубликовать сайт бесплатно',
+      date: 'Гайды · 15.12.2025',
+      url: '../all/how-to-publish-site.html'
+    },
+    {
+      title: 'Плагины для VS Code',
+      date: 'Coding · 16.12.2025',
+      url: '../coding/vscode-plugins.html'
+    },
+    {
+      title: 'GPT-5 для разработчиков',
+      date: 'Новости · 10.01.2026',
+      url: '../news/gpt5-for-devs.html'
+    }
+  ];
+
+  const shuffled = articles
+    .filter(a => !location.href.includes(a.url))
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 6);
+
+  const grid = document.getElementById('alsoGrid');
+
+  shuffled.forEach(a => {
+    const card = document.createElement('a');
+    card.className = 'also-card';
+    card.href = a.url;
+
+    card.innerHTML = `
+      <span>${a.date}</span>
+      <h3>${a.title}</h3>
+    `;
+
+    grid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
