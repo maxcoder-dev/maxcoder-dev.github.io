@@ -2,10 +2,11 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Как выбрать язык программирования | DevNews</title>
+  <title>Как выбрать язык программирования в 2026 году | DevNews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Как выбрать язык программирования новичку: Python, JavaScript, Java, C++. Разбираем цели, сложность и области применения.">
+  <meta name="description"
+        content="Гид по выбору языка программирования в 2026 году: анализируем рынок ИИ, веб-разработки и системного ПО.">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -23,6 +24,9 @@
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .container {
@@ -64,7 +68,15 @@
       background: #ffffff;
       border-radius: 12px;
       padding: 32px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
     }
 
     article h1 {
@@ -80,8 +92,8 @@
 
     .views {
       font-size: 14px;
-      color: #6b7280;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      color: #374151;
     }
 
     article h2 {
@@ -101,6 +113,47 @@
       margin-bottom: 16px;
     }
 
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    #read-also h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .also-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .also-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 16px;
+      text-decoration: none;
+      color: #111827;
+      transition: transform .15s, box-shadow .15s;
+    }
+
+    .also-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+
+    .also-card span {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .also-card h3 {
+      margin: 6px 0 0;
+      font-size: 16px;
+    }
+
     footer {
       background: #ffffff;
       border-top: 1px solid #e5e7eb;
@@ -116,6 +169,12 @@
     }
 
     footer a:hover { color: #2563eb; }
+
+    @media (max-width: 768px) {
+      .also-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -137,47 +196,54 @@
 <main class="article-container">
   <article>
 
-    <h1>Как выбрать язык программирования</h1>
+    <a href="../../index.html" class="back-link">← Назад к статьям</a>
+
+    <h1>Как выбрать язык программирования в 2026 году</h1>
 
     <div class="article-meta">
-      15.12.2025 · Программирование · Статьи
+      Coding · 30.01.2026
     </div>
 
-    <div class="views" id="viewsCounter">
-      Вы посмотрели статью: 0 раз
-    </div>
+    <div class="views" id="viewsCounter"></div>
 
     <p>
-      Один из самых частых вопросов у новичков — какой язык программирования
-      выбрать для изучения. Существует множество языков, и каждый из них
-      подходит для своих задач.
+      Мир разработки в 2026 году сильно изменился под влиянием нейросетей и новых стандартов производительности. 
+      Выбор первого (или следующего) языка теперь зависит не только от синтаксиса, но и от того, насколько удобно 
+      с ним работать в связке с ИИ-ассистентами.
     </p>
+
+    <h2>Лидеры рынка: на что смотреть</h2>
 
     <p>
-      В этой статье разберём, как выбрать язык программирования,
-      исходя из целей, сложности и области применения.
+      Если раньше мы выбирали между "простотой" и "скоростью", то сегодня ключевой фактор — это экосистема 
+      и область применения. Вот основные фавориты:
     </p>
 
-    <h2>Определите цель обучения</h2>
     <ul>
-      <li>веб-разработка</li>
-      <li>создание приложений</li>
-      <li>игры</li>
-      <li>анализ данных и ИИ</li>
-      <li>системное программирование</li>
+      <li><strong>Python:</strong> Остается королем ИИ и Data Science. Благодаря новым JIT-компиляторам он стал значительно быстрее.</li>
+      <li><strong>TypeScript:</strong> Де-факто стандарт для веб-разработки. JS без типизации в 2026 году встречается только в легаси-проектах.</li>
+      <li><strong>Rust:</strong> Главный выбор для системного программирования, вытесняющий C++ в новых высоконагруженных сервисах.</li>
+      <li><strong>Mojo:</strong> Новый игрок, объединяющий простоту Python и мощь C, стремительно набирающий популярность в AI-инфраструктуре.</li>
     </ul>
 
-    <h2>Популярные языки для старта</h2>
-    <p><strong>Python</strong> — простой и универсальный.</p>
-    <p><strong>JavaScript</strong> — основной язык веба.</p>
-    <p><strong>Java</strong> — корпоративные и Android-проекты.</p>
-    <p><strong>C++</strong> — мощный, но сложный.</p>
+    <h2>Как не ошибиться с выбором?</h2>
 
-    <h2>Вывод</h2>
     <p>
-      Универсального языка не существует.
-      Для старта подойдут Python или JavaScript.
+      Для новичков в 2026 году лучшим выбором остается <strong>Python</strong> или <strong>TypeScript</strong>. 
+      Они обладают самым низким порогом входа и огромным количеством готовых библиотек, которые ИИ умеет использовать идеально.
     </p>
+
+    <p>
+      Если ваша цель — создание высокопроизводительных игровых движков или блокчейн-решений, смело смотрите в сторону <strong>Rust</strong>. 
+      Его кривая обучения крутая, но знание Rust сегодня гарантирует одну из самых высоких зарплат на рынке.
+    </p>
+
+    <hr style="margin:40px 0 24px">
+
+    <section id="read-also">
+      <h2>Читайте также</h2>
+      <div class="also-grid" id="alsoGrid"></div>
+    </section>
 
   </article>
 </main>
@@ -185,25 +251,77 @@
 <footer>
   <div class="container">
     © 2026 DevNews ·
-    <a href="about.html">О сайте</a>
-    <a href="privacy.html">Политика конфиденциальности</a>
-    <a href="terms.html">Пользовательское соглашение</a>
-    <a href="contacts.html">Контакты</a>
+    <a href="../../about.html">О сайте</a>
+    <a href="../../privacy.html">Политика конфиденциальности</a>
+    <a href="../../terms.html">Пользовательское соглашение</a>
+    <a href="../../contacts.html">Контакты</a>
   </div>
 </footer>
 
-<!-- СЧЁТЧИК ПРОСМОТРОВ -->
 <script>
-  const key = 'views-how-to-choose-language';
-  let views = localStorage.getItem(key) || 0;
+  // Уникальный ключ для этой статьи
+  const key = 'views-choose-lang-2026';
+  let views = localStorage.getItem(key);
 
+  if (!views) views = 0;
   views++;
+
   localStorage.setItem(key, views);
 
   document.getElementById('viewsCounter').innerHTML =
-    'Вы посмотрели статью: <strong>' + views + '</strong> раз';
+    'Вы посмотрели эту статью: <strong>' + views + '</strong> раз';
 </script>
 
+<script>
+  // Обновленные пути с учетом того, что мы находимся в /articles/coding/
+  const articles = [
+    {
+      title: 'OpenAI представила GPT-5 для разработчиков',
+      date: 'Новости · 10.01.2026',
+      url: '../news/gpt5-for-devs.html'
+    },
+    {
+      title: 'Лучший браузер в 2025',
+      date: 'Статьи · 15.12.2025',
+      url: '../all/best-browser.html'
+    },
+    {
+      title: 'Плагины для VS Code',
+      date: 'Coding · 16.12.2025',
+      url: 'vscode-plugins.html'
+    },
+    {
+      title: 'Как опубликовать сайт бесплатно',
+      date: 'Гайды · 15.12.2025',
+      url: '../all/how-to-publish-site.html'
+    },
+    {
+      title: 'История Яндекса',
+      date: 'Статьи · 13.12.2025',
+      url: '../all/yandex-history.html'
+    },
+    {
+      title: 'Почему именно DevNews?',
+      date: 'Новости · 18.12.2025',
+      url: '../all/devnews-intro.html'
+    }
+  ];
+
+  const grid = document.getElementById('alsoGrid');
+
+  articles.forEach(a => {
+    const card = document.createElement('a');
+    card.className = 'also-card';
+    card.href = a.url;
+
+    card.innerHTML = `
+      <span>${a.date}</span>
+      <h3>${a.title}</h3>
+    `;
+
+    grid.appendChild(card);
+  });
+</script>
 
 </body>
 </html>
