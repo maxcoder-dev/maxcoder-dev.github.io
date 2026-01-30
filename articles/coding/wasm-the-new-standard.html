@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>WebAssembly в 2026: Почему JS больше не монополист | DevNews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Разбираемся, как WebAssembly изменил архитектуру современных веб-приложений в 2026 году и стоит ли учить Rust для фронтенда.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, sans-serif; background: #f6f7f9; color: #1c1c1c; line-height: 1.7; }
+    header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 100; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .logo a { font-size: 22px; font-weight: 700; color: #2563eb; text-decoration: none; }
+    nav a { margin-left: 20px; text-decoration: none; color: #374151; font-weight: 500; }
+    nav a:hover { color: #2563eb; }
+    .article-container { max-width: 800px; margin: 40px auto 60px; padding: 0 20px; }
+    article { background: #ffffff; border-radius: 12px; padding: 32px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); }
+    .back-link { display: inline-block; margin-bottom: 24px; text-decoration: none; color: #2563eb; font-weight: 500; }
+    article h1 { font-size: 30px; margin-bottom: 8px; line-height: 1.2; }
+    .article-meta { font-size: 14px; color: #6b7280; margin-bottom: 6px; }
+    .views { font-size: 14px; margin-bottom: 20px; color: #374151; }
+    article h2 { font-size: 22px; margin-top: 28px; margin-bottom: 12px; }
+    article p { margin-bottom: 16px; font-size: 16px; color: #374151; }
+    .feature-card { background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e5e7eb; }
+    hr { border: none; border-top: 1px solid #e5e7eb; }
+    #read-also h2 { font-size: 22px; margin-bottom: 16px; }
+    .also-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .also-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; text-decoration: none; color: #111827; transition: transform .15s, box-shadow .15s; }
+    .also-card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+    .also-card span { font-size: 13px; color: #6b7280; }
+    .also-card h3 { margin: 6px 0 0; font-size: 16px; }
+    footer { background: #ffffff; border-top: 1px solid #e5e7eb; padding: 20px 0; font-size: 14px; color: #6b7280; }
+    footer a { color: #6b7280; text-decoration: none; margin-right: 15px; }
+    footer a:hover { color: #2563eb; }
+    @media (max-width: 768px) { .also-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo"><a href="../../index.html">DevNews</a></div>
+    <nav>
+      <a href="../../index.html">Главная</a>
+      <a href="../../index.html">Новости</a>
+      <a href="../../about.html">О сайте</a>
+      <a href="../../contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-container">
+  <article>
+    <a href="../../index.html" class="back-link">Назад к новостям</a>
+
+    <h1>WebAssembly в 2026: Почему JS больше не монополист</h1>
+
+    <div class="article-meta">Coding · 30.01.2026</div>
+    <div class="views" id="viewsCounter"></div>
+
+    <p>
+      Долгое время JavaScript был единственным полноценным языком веба. Но в 2026 году ситуация изменилась: 
+      благодаря спецификации <strong>Wasm Component Model</strong>, грань между браузерным и системным кодом окончательно стерлась.
+    </p>
+
+    <div class="feature-card">
+      <strong>Интересный факт:</strong> Сегодня более 40% тяжелых веб-приложений (видеоредакторы, 3D-движки, ИИ-интерфейсы) 
+      используют Rust или Zig, скомпилированные в WebAssembly.
+    </div>
+
+    <h2>Что изменилось за последний год?</h2>
+    <p>
+      Главным прорывом стала полноценная поддержка <strong>Garbage Collection (WasmGC)</strong> всеми браузерами. 
+      Это позволило таким языкам, как Kotlin, Dart и даже Java, работать в вебе с производительностью, близкой к нативной, 
+      не таща за собой тяжелые runtime-библиотеки.
+    </p>
+
+    <h2>Стоит ли фронтенд-разработчику паниковать?</h2>
+    <p>
+      Нет. JavaScript никуда не денется — он остается лучшим «клеем» для интерфейсов. Однако современный «Senior Frontend» 
+      в 2026 году — это человек, который понимает, какую часть логики нужно вынести в WASM-модуль на Rust, чтобы 
+      интерфейс не «фризил» при обработке данных.
+    </p>
+
+    <p>
+      Будущее веба — в мультиплатформенности. Один и тот же код теперь работает на сервере (через WASI), 
+      в браузере и на мобильных устройствах.
+    </p>
+
+    <hr style="margin:40px 0 24px">
+
+    <section id="read-also">
+      <h2>Читайте также</h2>
+      <div class="also-grid" id="alsoGrid"></div>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 DevNews ·
+    <a href="about.html">О сайте</a>
+    <a href="privacy.html">Политика конфиденциальности</a>
+    <a href="terms.html">Пользовательское соглашение</a>
+    <a href="contacts.html">Контакты</a>
+  </div>
+</footer>
+
+<script>
+  const key = 'views-wasm-2026';
+  let views = localStorage.getItem(key) || 0;
+  views++;
+  localStorage.setItem(key, views);
+  document.getElementById('viewsCounter').innerHTML = 'Просмотров: <strong>' + views + '</strong>';
+</script>
+
+<script>
+  // Пути из /articles/coding/
+  const articles = [
+    { title: 'Как выбрать ЯП в 2026', date: 'Coding · 30.01.2026', url: 'how-to-choose-programming-language.html' },
+    { title: 'Плагины для VS Code', date: 'Coding · 16.12.2025', url: 'vscode-plugins.html' },
+    { title: 'Linux: Эра Immutable OS', date: 'Статьи · 30.01.2026', url: '../all/linux-distros-comparison.html' },
+    { title: 'GPT-5 для разрабов', date: 'Новости · 10.01.2026', url: '../news/gpt5-for-devs.html' },
+    { title: 'Chrome 126 Обновление', date: 'Новости · 14.01.2026', url: '../news/chrome-126-security.html' },
+    { title: 'Лучший браузер 2025', date: 'Статьи · 15.12.2025', url: '../all/best-browser.html' }
+  ];
+
+  const grid = document.getElementById('alsoGrid');
+  articles.forEach(a => {
+    const card = document.createElement('a');
+    card.className = 'also-card';
+    card.href = a.url;
+    card.innerHTML = `<span>${a.date}</span><h3>${a.title}</h3>`;
+    grid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
