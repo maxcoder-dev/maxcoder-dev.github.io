@@ -4,134 +4,77 @@
   <meta charset="UTF-8">
   <title>Как залить свой сайт в интернет | DevNews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description" content="Пошаговое руководство, как выложить свой сайт в интернет: хостинг, домен, GitHub Pages, бесплатные и платные варианты.">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Inter, sans-serif;
-      background: #f6f7f9;
-      color: #1c1c1c;
-      line-height: 1.7;
-    }
-
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 64px;
-    }
-
-    .logo a {
-      font-size: 22px;
-      font-weight: 700;
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #374151;
-      font-weight: 500;
-    }
-
-    nav a:hover { color: #2563eb; }
-
-    .article-container {
-      max-width: 800px;
-      margin: 40px auto 60px;
-      padding: 0 20px;
-    }
-
-    article {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 32px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    article h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .article-meta {
-      font-size: 14px;
-      color: #6b7280;
-      margin-bottom: 8px;
-    }
-
-    .views {
-      font-size: 14px;
-      color: #6b7280;
-      margin-bottom: 24px;
-    }
-
-    article h2 {
-      font-size: 22px;
-      margin-top: 28px;
-      margin-bottom: 12px;
-    }
-
-    article p {
-      margin-bottom: 16px;
-      font-size: 16px;
-      color: #374151;
-    }
-
-    ul {
-      margin-left: 20px;
-      margin-bottom: 16px;
-    }
-
-    code {
-      background: #f3f4f6;
-      padding: 2px 6px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    footer {
-      background: #ffffff;
-      border-top: 1px solid #e5e7eb;
-      padding: 20px 0;
-      font-size: 14px;
-      color: #6b7280;
-    }
-
-    footer a {
-      color: #6b7280;
-      text-decoration: none;
-      margin-right: 15px;
-    }
-
-    footer a:hover { color: #2563eb; }
+    :root{--bg:#0a0a0f;--surface:#111118;--surface2:#18181f;--border:rgba(255,255,255,0.07);--accent:#6c63ff;--accent2:#ff6584;--accent3:#43e97b;--text:#e8e8f0;--muted:#7a7a99;--card-bg:#14141c;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.4;}
+    header{position:sticky;top:0;z-index:900;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;height:68px;}
+    .logo a{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.5px;display:flex;align-items:center;gap:8px;}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:0.6;}}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:14px;padding:8px 14px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--text);background:var(--surface2);}
+    .article-wrap{max-width:780px;margin:0 auto;padding:48px 24px 80px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border:1px solid var(--border);border-radius:8px;margin-bottom:36px;transition:all 0.2s;font-family:'JetBrains Mono',monospace;}
+    .back-link:hover{color:var(--text);border-color:rgba(108,99,255,0.4);background:var(--surface2);}
+    .article-meta-top{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+    .cat-badge{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);color:var(--accent);font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;}
+    .article-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.65) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .views-bar{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:36px;}
+    .views-bar strong{color:var(--accent);}
+    .article-body{animation:fadeUp 0.5s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+    .article-body p{font-size:16px;color:rgba(232,232,240,0.8);line-height:1.8;margin-bottom:20px;}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;color:var(--text);margin:40px 0 16px;}
+    .article-body ul{margin:0 0 20px 0;padding-left:0;list-style:none;}
+    .article-body ul li{font-size:16px;color:rgba(232,232,240,0.8);line-height:1.8;padding:6px 0 6px 20px;position:relative;}
+    .article-body ul li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:12px;top:8px;}
+    .method-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px;transition:border-color 0.2s;position:relative;overflow:hidden;}
+    .method-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+    .method-card.free::before{background:linear-gradient(90deg,var(--accent3),#007acc);}
+    .method-card.paid::before{background:linear-gradient(90deg,#ff6584,#ffd06b);}
+    .method-card.cloud::before{background:linear-gradient(90deg,var(--accent),#a78bfa);}
+    .method-card:hover{border-color:rgba(108,99,255,0.3);}
+    .method-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+    .method-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--text);}
+    .method-tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 10px;border-radius:999px;}
+    .tag-free{background:rgba(67,233,123,0.1);border:1px solid rgba(67,233,123,0.3);color:var(--accent3);}
+    .tag-paid{background:rgba(255,101,132,0.1);border:1px solid rgba(255,101,132,0.3);color:var(--accent2);}
+    .tag-cloud{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);color:var(--accent);}
+    .method-desc{font-size:14px;color:var(--muted);line-height:1.6;}
+    code{font-family:'JetBrains Mono',monospace;background:var(--surface2);border:1px solid var(--border);padding:2px 7px;border-radius:5px;font-size:13px;color:var(--accent3);}
+    .verdict-card{background:rgba(108,99,255,0.06);border:1px solid rgba(108,99,255,0.2);border-left:3px solid var(--accent);border-radius:12px;padding:20px 24px;margin:32px 0;}
+    .verdict-card p{margin:0;color:rgba(232,232,240,0.8);font-size:15px;}
+    .verdict-card strong{color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:48px 0 36px;}
+    .read-also h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;color:var(--text);}
+    .also-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    .also-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:all 0.2s;}
+    .also-card:hover{border-color:rgba(108,99,255,0.3);transform:translateY(-2px);background:var(--surface2);}
+    .also-card .also-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;}
+    .also-card h3{font-size:14px;font-weight:600;color:var(--text);line-height:1.4;}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:36px 0;}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--text);}
+    .footer-copy{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',monospace;margin-top:4px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:4px;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:all 0.2s;}
+    .footer-links a:hover{color:var(--text);background:var(--surface2);}
+    @media(max-width:700px){.also-grid{grid-template-columns:1fr 1fr;}nav a{padding:8px 10px;font-size:13px;}}
+    @media(max-width:480px){.also-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
-
 <header>
   <div class="container header-inner">
-    <div class="logo">
-      <a href="../../index.html">DevNews</a>
-    </div>
+    <div class="logo"><a href="../../index.html"><span class="logo-dot"></span>DevNews</a></div>
     <nav>
       <a href="../../index.html">Главная</a>
       <a href="../../index.html">Новости</a>
@@ -141,23 +84,22 @@
   </div>
 </header>
 
-<main class="article-container">
-  <article>
+<main class="article-wrap">
+  <a href="../../index.html" class="back-link">← Назад к статьям</a>
 
-    <h1>Как залить свой сайт в интернет</h1>
+  <div class="article-meta-top">
+    <span class="cat-badge">Guides</span>
+    <span class="cat-badge" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3);color:#43e97b;">Web</span>
+    <span class="article-date">15.12.2025</span>
+  </div>
 
-    <div class="article-meta">
-      15.12.2025 · Веб-разработка · Статьи
-    </div>
+  <h1>Как залить свой сайт в интернет</h1>
 
-    <div class="views" id="viewsCounter"></div>
+  <div class="views-bar">👁 Просмотров: <strong id="viewsVal">—</strong></div>
 
-    <p>
-      Когда сайт готов — возникает главный вопрос:
-      <strong>как сделать так, чтобы его увидели другие?</strong>
-      В этой статье разберём простые и понятные способы
-      выложить сайт в интернет.
-    </p>
+  <div class="article-body">
+
+    <p>Когда сайт готов — возникает главный вопрос: <strong>как сделать так, чтобы его увидели другие?</strong> В этой статье разберём простые и понятные способы выложить сайт в интернет.</p>
 
     <h2>Что нужно, чтобы сайт был доступен</h2>
     <ul>
@@ -166,70 +108,89 @@
       <li>домен (необязательно)</li>
     </ul>
 
-    <h2>Способ 1: GitHub Pages (бесплатно)</h2>
-    <p>
-      Отличный вариант для статических сайтов.
-    </p>
+    <h2>Способы публикации</h2>
 
-    <ul>
-      <li>создайте аккаунт на GitHub</li>
-      <li>загрузите файлы в репозиторий</li>
-      <li>в настройках включите <code>GitHub Pages</code></li>
-    </ul>
+    <div class="method-card free">
+      <div class="method-header">
+        <div class="method-name">GitHub Pages</div>
+        <span class="method-tag tag-free">Бесплатно</span>
+      </div>
+      <div class="method-desc">
+        Отличный вариант для статических сайтов. Создайте аккаунт на GitHub, загрузите файлы в репозиторий и включите <code>GitHub Pages</code> в настройках. Сайт будет доступен по адресу вида <code>https://username.github.io</code>.
+      </div>
+    </div>
 
-    <p>
-      Сайт будет доступен по адресу вида:
-      <code>https://username.github.io</code>
-    </p>
+    <div class="method-card paid">
+      <div class="method-header">
+        <div class="method-name">Платный хостинг</div>
+        <span class="method-tag tag-paid">Платно</span>
+      </div>
+      <div class="method-desc">
+        Подходит для серьёзных проектов, блогов и сайтов с backend. Выберите хостинг-провайдера, купите домен и загрузите файлы через FTP или панель управления.
+      </div>
+    </div>
 
-    <h2>Способ 2: Платный хостинг</h2>
-    <p>
-      Подходит для серьёзных проектов, блогов и сайтов с backend.
-    </p>
+    <div class="method-card cloud">
+      <div class="method-header">
+        <div class="method-name">Netlify / Vercel</div>
+        <span class="method-tag tag-cloud">Free / Pro</span>
+      </div>
+      <div class="method-desc">
+        Облачные платформы позволяют развернуть сайт буквально за несколько минут. Поддерживают автодеплой из GitHub и HTTPS из коробки.
+      </div>
+    </div>
 
-    <ul>
-      <li>выберите хостинг-провайдера</li>
-      <li>купите домен</li>
-      <li>загрузите файлы через FTP или панель управления</li>
-    </ul>
+    <div class="verdict-card">
+      <p><strong>Вывод:</strong> Если вы новичок — начните с GitHub Pages или Netlify. Для коммерческих и сложных проектов лучше выбрать полноценный хостинг с доменом.</p>
+    </div>
 
-    <h2>Способ 3: Облачные платформы</h2>
-    <p>
-      Netlify, Vercel и аналоги позволяют развернуть сайт
-      буквально за несколько минут.
-    </p>
+  </div>
 
-    <h2>Вывод</h2>
-    <p>
-      Если вы новичок — начните с GitHub Pages или Netlify.
-      Для коммерческих и сложных проектов лучше выбрать
-      полноценный хостинг с доменом.
-    </p>
+  <hr class="divider">
 
-  </article>
+  <section class="read-also">
+    <h2>Читайте также</h2>
+    <div class="also-grid" id="alsoGrid"></div>
+  </section>
 </main>
 
 <footer>
-  <div class="container">
-    © 2026 DevNews ·
-    <a href="about.html">О сайте</a>
-    <a href="privacy.html">Политика конфиденциальности</a>
-    <a href="terms.html">Пользовательское соглашение</a>
-    <a href="contacts.html">Контакты</a>
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-logo">DevNews</div>
+      <div class="footer-copy">© 2026</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../about.html">О сайте</a>
+      <a href="../../privacy.html">Конфиденциальность</a>
+      <a href="../../terms.html">Соглашение</a>
+      <a href="../../contacts.html">Контакты</a>
+    </div>
   </div>
 </footer>
 
-<!-- СЧЁТЧИК ПРОСМОТРОВ -->
 <script>
   const key = 'views-how-to-publish-site';
-  let views = localStorage.getItem(key) || 0;
-
-  views++;
+  let views = parseInt(localStorage.getItem(key) || '0') + 1;
   localStorage.setItem(key, views);
+  document.getElementById('viewsVal').textContent = views;
 
-  document.getElementById('viewsCounter').innerHTML =
-    'Вы посмотрели статью: <strong>' + views + '</strong> раз';
+  const articles = [
+    { title: 'Лучший редактор кода для Python', meta: 'Coding · 15.12.2025', url: '../coding/best-python-code-editor.html' },
+    { title: 'Сравнение дистрибутивов Linux', meta: 'Linux · 14.12.2025', url: 'linux-distros-comparison.html' },
+    { title: 'Какой браузер самый лучший', meta: 'Browsers · 15.12.2025', url: 'best-browser.html' },
+    { title: 'Знакомство с DevNews', meta: 'DevNews · 15.12.2025', url: 'devnews-intro.html' },
+    { title: 'Почему именно DevNews?', meta: 'Blog · 15.12.2025', url: 'why-devnews.html' },
+    { title: 'История Яндекса', meta: 'Tech · 13.12.2025', url: 'yandex-history.html' },
+  ];
+
+  const grid = document.getElementById('alsoGrid');
+  articles.forEach(a => {
+    const el = document.createElement('a');
+    el.className = 'also-card'; el.href = a.url;
+    el.innerHTML = `<div class="also-meta">${a.meta}</div><h3>${a.title}</h3>`;
+    grid.appendChild(el);
+  });
 </script>
-
 </body>
 </html>

@@ -4,184 +4,78 @@
   <meta charset="UTF-8">
   <title>Как начать путь в разработке в 2026 году | DevNews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-        content="Как начать путь в разработке в 2026 году: языки, направления и советы для новичков.">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Как начать путь в разработке в 2026 году: языки, направления и советы для новичков.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Inter, sans-serif;
-      background: #f6f7f9;
-      color: #1c1c1c;
-      line-height: 1.7;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 64px;
-    }
-
-    .logo a {
-      font-size: 22px;
-      font-weight: 700;
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #374151;
-      font-weight: 500;
-    }
-
-    nav a:hover { color: #2563eb; }
-
-    /* ===== ARTICLE ===== */
-    .article-container {
-      max-width: 800px;
-      margin: 40px auto 40px;
-      padding: 0 20px;
-    }
-
-    article {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 34px;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.05);
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 22px;
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: 500;
-    }
-
-    article h1 {
-      font-size: 30px;
-      margin-bottom: 6px;
-    }
-
-    .article-meta {
-      font-size: 14px;
-      color: #6b7280;
-      margin-bottom: 22px;
-    }
-
-    article h2 {
-      font-size: 22px;
-      margin-top: 28px;
-      margin-bottom: 12px;
-    }
-
-    article p {
-      margin-bottom: 16px;
-      font-size: 16px;
-      color: #374151;
-    }
-
-    ul {
-      margin-left: 20px;
-      margin-bottom: 16px;
-    }
-
-    /* ===== RECOMMENDED ===== */
-    .recommended {
-      max-width: 800px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-    }
-
-    .recommended h3 {
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-
-    .recommended-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-
-    .news-card {
-      display: block;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 18px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .news-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    }
-
-    .news-card h4 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .news-card p {
-      font-size: 14px;
-      color: #4b5563;
-      margin-bottom: 10px;
-    }
-
-    .news-meta {
-      font-size: 12px;
-      color: #6b7280;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #ffffff;
-      border-top: 1px solid #e5e7eb;
-      padding: 22px 0;
-      font-size: 14px;
-      color: #6b7280;
-    }
-
-    @media (max-width: 768px) {
-      article {
-        padding: 24px;
-      }
-    }
+    :root{--bg:#0a0a0f;--surface:#111118;--surface2:#18181f;--border:rgba(255,255,255,0.07);--accent:#6c63ff;--accent2:#ff6584;--accent3:#43e97b;--text:#e8e8f0;--muted:#7a7a99;--card-bg:#14141c;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.4;}
+    header{position:sticky;top:0;z-index:900;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;height:68px;}
+    .logo a{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.5px;display:flex;align-items:center;gap:8px;}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:0.6;}}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:14px;padding:8px 14px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--text);background:var(--surface2);}
+    .article-wrap{max-width:780px;margin:0 auto;padding:48px 24px 80px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border:1px solid var(--border);border-radius:8px;margin-bottom:36px;transition:all 0.2s;font-family:'JetBrains Mono',monospace;}
+    .back-link:hover{color:var(--text);border-color:rgba(108,99,255,0.4);background:var(--surface2);}
+    .article-meta-top{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+    .cat-badge{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);color:var(--accent);font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;}
+    .article-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.65) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .views-bar{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:36px;}
+    .views-bar strong{color:var(--accent);}
+    .article-body{animation:fadeUp 0.5s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+    .article-body p{font-size:16px;color:rgba(232,232,240,0.8);line-height:1.8;margin-bottom:20px;}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;color:var(--text);margin:40px 0 16px;}
+    .article-body ul{margin:0 0 20px 0;padding-left:0;list-style:none;}
+    .article-body ul li{font-size:16px;color:rgba(232,232,240,0.8);line-height:1.8;padding:6px 0 6px 20px;position:relative;}
+    .article-body ul li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:12px;top:8px;}
+    .step-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px;transition:border-color 0.2s;position:relative;overflow:hidden;display:flex;gap:20px;align-items:flex-start;}
+    .step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+    .step-card:nth-child(1)::before{background:linear-gradient(90deg,var(--accent),#a78bfa);}
+    .step-card:nth-child(2)::before{background:linear-gradient(90deg,var(--accent3),#007acc);}
+    .step-card:nth-child(3)::before{background:linear-gradient(90deg,var(--accent2),#ffd06b);}
+    .step-card:hover{border-color:rgba(108,99,255,0.3);}
+    .step-num{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:rgba(108,99,255,0.2);line-height:1;flex-shrink:0;width:40px;}
+    .step-content{}
+    .step-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;}
+    .step-desc{font-size:14px;color:var(--muted);line-height:1.6;}
+    .lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+    .lang-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;transition:border-color 0.2s;}
+    .lang-card:hover{border-color:rgba(108,99,255,0.3);}
+    .lang-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;}
+    .lang-desc{font-size:12px;color:var(--muted);}
+    .verdict-card{background:rgba(108,99,255,0.06);border:1px solid rgba(108,99,255,0.2);border-left:3px solid var(--accent);border-radius:12px;padding:20px 24px;margin:32px 0;}
+    .verdict-card p{margin:0;color:rgba(232,232,240,0.8);font-size:15px;}
+    .verdict-card strong{color:var(--accent);}
+    .divider{border:none;border-top:1px solid var(--border);margin:48px 0 36px;}
+    .read-also h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;color:var(--text);}
+    .also-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    .also-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:all 0.2s;}
+    .also-card:hover{border-color:rgba(108,99,255,0.3);transform:translateY(-2px);background:var(--surface2);}
+    .also-card .also-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;}
+    .also-card h3{font-size:14px;font-weight:600;color:var(--text);line-height:1.4;}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:36px 0;}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--text);}
+    .footer-copy{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',monospace;margin-top:4px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:4px;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:all 0.2s;}
+    .footer-links a:hover{color:var(--text);background:var(--surface2);}
+    @media(max-width:700px){.also-grid{grid-template-columns:1fr 1fr;}.lang-grid{grid-template-columns:1fr 1fr;}nav a{padding:8px 10px;font-size:13px;}.step-card{flex-direction:column;gap:8px;}}
+    @media(max-width:480px){.also-grid{grid-template-columns:1fr;}.lang-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
-
 <header>
   <div class="container header-inner">
-    <div class="logo">
-      <a href="../../index.html">DevNews</a>
-    </div>
+    <div class="logo"><a href="../../index.html"><span class="logo-dot"></span>DevNews</a></div>
     <nav>
       <a href="../../index.html">Главная</a>
       <a href="../../index.html">Новости</a>
@@ -190,78 +84,117 @@
   </div>
 </header>
 
-<main class="article-container">
-  <article>
+<main class="article-wrap">
+  <a href="../../index.html" class="back-link">← Назад к новостям</a>
 
-    <a href="../../index.html" class="back-link">← Назад к новостям</a>
+  <div class="article-meta-top">
+    <span class="cat-badge">Guides</span>
+    <span class="cat-badge" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3);color:#43e97b;">2026</span>
+    <span class="article-date">30.01.2026</span>
+  </div>
 
-    <h1>Как начать путь в разработке в 2026 году</h1>
+  <h1>Как начать путь в разработке в 2026 году</h1>
 
-    <div class="article-meta">
-      Guides · 30.01.2026 · Просмотров: 1
+  <div class="views-bar">👁 Просмотров: <strong id="viewsVal">—</strong></div>
+
+  <div class="article-body">
+
+    <p>Войти в IT в 2026 году проще, чем кажется. Главное — выбрать направление и не пытаться объять всё сразу.</p>
+
+    <h2>Три главных шага</h2>
+
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Выбери направление</div>
+        <div class="step-desc">Frontend, backend, мобильная разработка или игры — важно выбрать одно и сосредоточиться. Распыление замедляет прогресс.</div>
+      </div>
     </div>
 
-    <p>
-      Войти в IT в 2026 году проще, чем кажется.
-      Главное — выбрать направление и не пытаться
-      объять всё сразу.
-    </p>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Язык имеет значение</div>
+        <div class="step-desc">Правильный первый язык ускорит обучение. Выбирай исходя из направления, а не моды.</div>
+      </div>
+    </div>
 
-    <h2>1. Выбери направление</h2>
-    <p>Frontend, backend, мобильная разработка или игры —
-      важно выбрать одно и сосредоточиться.</p>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Делай проекты</div>
+        <div class="step-desc">Сайт, бот или маленькое приложение важнее десятка курсов. Реальный код — реальный опыт.</div>
+      </div>
+    </div>
 
-    <h2>2. Язык имеет значение</h2>
-    <ul>
-      <li>Python — идеален для старта</li>
-      <li>JavaScript — основа веба</li>
-      <li>TypeScript — шаг вперёд</li>
-    </ul>
+    <h2>С чего начать по языкам</h2>
 
-    <h2>3. Делай проекты</h2>
-    <p>
-      Сайт, бот или маленькое приложение
-      важнее десятка курсов.
-    </p>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="lang-name">Python</div>
+        <div class="lang-desc">Идеален для старта</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">JavaScript</div>
+        <div class="lang-desc">Основа веба</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">TypeScript</div>
+        <div class="lang-desc">Шаг вперёд</div>
+      </div>
+    </div>
 
-    <p>
-      Начать можно уже сегодня 🚀
-    </p>
-
-  </article>
-</main>
-
-<section class="recommended">
-  <h3>Рекомендуем посмотреть</h3>
-
-  <div class="recommended-grid">
-
-    <a class="news-card" href="../news/chrome-126-security.html">
-      <h4>Chrome 126: безопасность и ИИ</h4>
-      <p>Google усилила защиту и добавила ИИ-функции.</p>
-      <div class="news-meta">22.01.2026 · News</div>
-    </a>
-
-    <a class="news-card" href="../guides/how-to-publish-site.html">
-      <h4>Как опубликовать сайт бесплатно</h4>
-      <p>Хостинги, домены и реальные способы.</p>
-      <div class="news-meta">15.01.2026 · Guides</div>
-    </a>
-
-    <a class="news-card" href="../blog/why-devnews.html">
-      <h4>Почему именно DevNews?</h4>
-      <p>Зачем мы сделали этот проект.</p>
-      <div class="news-meta">15.01.2026 · Blog</div>
-    </a>
+    <div class="verdict-card">
+      <p><strong>Главный совет:</strong> Начать можно уже сегодня 🚀 Не ждите идеального момента — просто начните писать код.</p>
+    </div>
 
   </div>
-</section>
+
+  <hr class="divider">
+
+  <section class="read-also">
+    <h2>Читайте также</h2>
+    <div class="also-grid" id="alsoGrid"></div>
+  </section>
+</main>
 
 <footer>
-  <div class="container">
-    © 2026 DevNews · Новости технологий и разработки
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-logo">DevNews</div>
+      <div class="footer-copy">© 2026</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../about.html">О сайте</a>
+      <a href="../../privacy.html">Конфиденциальность</a>
+      <a href="../../terms.html">Соглашение</a>
+      <a href="../../contacts.html">Контакты</a>
+    </div>
   </div>
 </footer>
 
+<script>
+  const key = 'views-how-to-start-dev-2026';
+  let views = parseInt(localStorage.getItem(key) || '0') + 1;
+  localStorage.setItem(key, views);
+  document.getElementById('viewsVal').textContent = views;
+
+  const articles = [
+    { title: 'Лучший редактор кода для Python', meta: 'Coding · 15.12.2025', url: 'best-python-code-editor.html' },
+    { title: 'Как залить сайт в интернет', meta: 'Guides · 15.12.2025', url: 'how-to-publish-site.html' },
+    { title: 'Почему именно DevNews?', meta: 'Blog · 15.12.2025', url: 'why-devnews.html' },
+    { title: 'Сравнение дистрибутивов Linux', meta: 'Linux · 14.12.2025', url: 'linux-distros-comparison.html' },
+    { title: 'Какой браузер самый лучший', meta: 'Browsers · 15.12.2025', url: 'best-browser.html' },
+    { title: 'История Яндекса', meta: 'Tech · 13.12.2025', url: 'yandex-history.html' },
+  ];
+
+  const grid = document.getElementById('alsoGrid');
+  articles.forEach(a => {
+    const el = document.createElement('a');
+    el.className = 'also-card'; el.href = a.url;
+    el.innerHTML = `<div class="also-meta">${a.meta}</div><h3>${a.title}</h3>`;
+    grid.appendChild(el);
+  });
+</script>
 </body>
 </html>
