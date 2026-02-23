@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenAI представила GPT-5 для разработчиков | DevNews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenAI представила GPT-5 — новую модель для разработчиков с улучшенным пониманием кода и обновлённым API.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a0f;--surface:#111118;--surface2:#18181f;--border:rgba(255,255,255,0.07);--accent:#6c63ff;--accent2:#ff6584;--accent3:#43e97b;--text:#e8e8f0;--muted:#7a7a99;--card-bg:#14141c;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.4;}
+    header{position:sticky;top:0;z-index:900;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;height:68px;}
+    .logo a{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.5px;display:flex;align-items:center;gap:8px;}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:0.6;}}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:14px;padding:8px 14px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--text);background:var(--surface2);}
+    .article-wrap{max-width:780px;margin:0 auto;padding:48px 24px 80px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border:1px solid var(--border);border-radius:8px;margin-bottom:36px;transition:all 0.2s;font-family:'JetBrains Mono',monospace;}
+    .back-link:hover{color:var(--text);border-color:rgba(108,99,255,0.4);background:var(--surface2);}
+    .article-meta-top{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+    .cat-badge{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);color:var(--accent);font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;}
+    .cat-badge.green{background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3);color:var(--accent3);}
+    .article-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.65) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .views-bar{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:36px;}
+    .views-bar strong{color:var(--accent);}
+    .article-body{animation:fadeUp 0.5s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+    .article-body p{font-size:16px;color:rgba(232,232,240,0.8);line-height:1.8;margin-bottom:20px;}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;color:var(--text);margin:40px 0 16px;}
+    .article-body ul{list-style:none;margin-bottom:20px;display:flex;flex-direction:column;gap:10px;}
+    .article-body ul li{display:flex;align-items:flex-start;gap:10px;color:rgba(232,232,240,0.8);font-size:15px;line-height:1.6;padding:12px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;}
+    .article-body ul li::before{content:'→';color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:13px;flex-shrink:0;margin-top:1px;}
+    .info-card{background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:20px 24px;margin:28px 0;}
+    .info-card p{margin:0;color:rgba(232,232,240,0.8);font-size:15px;}
+    .info-card strong{color:var(--text);}
+    .audience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0 24px;}
+    .audience-item{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px;}
+    .divider{border:none;border-top:1px solid var(--border);margin:48px 0 36px;}
+    .read-also h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;color:var(--text);}
+    .also-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    .also-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:all 0.2s;}
+    .also-card:hover{border-color:rgba(108,99,255,0.3);transform:translateY(-2px);background:var(--surface2);}
+    .also-card .also-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;}
+    .also-card h3{font-size:14px;font-weight:600;color:var(--text);line-height:1.4;}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:36px 0;}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--text);}
+    .footer-copy{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',monospace;margin-top:4px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:4px;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:all 0.2s;}
+    .footer-links a:hover{color:var(--text);background:var(--surface2);}
+    @media(max-width:700px){.also-grid{grid-template-columns:1fr 1fr;}.audience-grid{grid-template-columns:1fr;}nav a{padding:8px 10px;font-size:13px;}}
+    @media(max-width:480px){.also-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo"><a href="../../index.html"><span class="logo-dot"></span>DevNews</a></div>
+    <nav>
+      <a href="../../index.html">Главная</a>
+      <a href="../../index.html">Новости</a>
+      <a href="../../about.html">О сайте</a>
+      <a href="../../contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <a href="../../index.html" class="back-link">← Назад к новостям</a>
+
+  <div class="article-meta-top">
+    <span class="cat-badge">News</span>
+    <span class="cat-badge green">AI</span>
+    <span class="article-date">10.01.2026</span>
+  </div>
+
+  <h1>OpenAI представила GPT-5 для разработчиков</h1>
+
+  <div class="views-bar">👁 Просмотров: <strong id="viewsVal">—</strong></div>
+
+  <div class="article-body">
+
+    <p>Компания OpenAI официально представила модель GPT-5, ориентированную в первую очередь на разработчиков и профессиональное использование. Новая версия получила значительные улучшения в работе с кодом, логикой и API.</p>
+
+    <h2>Что нового в GPT-5</h2>
+
+    <ul>
+      <li>Улучшенное понимание программного кода</li>
+      <li>Меньше логических ошибок и «галлюцинаций»</li>
+      <li>Стабильные ответы в длинных диалогах</li>
+      <li>Повышенная скорость работы</li>
+    </ul>
+
+    <h2>Улучшения API</h2>
+
+    <p>GPT-5 получила обновлённый API с более предсказуемым поведением и улучшенной документацией для разработчиков.</p>
+
+    <div class="info-card">
+      <p><strong>Ключевое изменение:</strong> Новый API поддерживает режим потоковой передачи с меньшей задержкой и улучшенную поддержку функций (function calling), что делает интеграцию в продукты значительно проще.</p>
+    </div>
+
+    <h2>Для кого предназначена модель</h2>
+
+    <div class="audience-grid">
+      <div class="audience-item">🌐 Веб- и backend-разработчики</div>
+      <div class="audience-item">🚀 Стартапы, использующие ИИ</div>
+      <div class="audience-item">🏢 Корпоративные сервисы</div>
+      <div class="audience-item">💻 Инструменты для программирования</div>
+    </div>
+
+    <h2>Доступность</h2>
+
+    <p>OpenAI начала поэтапное внедрение GPT-5 через API. Массовый доступ ожидается в течение 2026 года — в первую очередь для существующих пользователей API Plus.</p>
+
+  </div>
+
+  <hr class="divider">
+
+  <section class="read-also">
+    <h2>Читайте также</h2>
+    <div class="also-grid" id="alsoGrid"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-logo">DevNews</div>
+      <div class="footer-copy">© 2026</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../about.html">О сайте</a>
+      <a href="../../privacy.html">Конфиденциальность</a>
+      <a href="../../terms.html">Соглашение</a>
+      <a href="../../contacts.html">Контакты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const key = 'views-gpt5-for-devs';
+  let views = parseInt(localStorage.getItem(key) || '0') + 1;
+  localStorage.setItem(key, views);
+  document.getElementById('viewsVal').textContent = views;
+
+  const articles = [
+    { title: 'Расширения перехватывали переписки с ИИ', meta: 'News · 16.12.2025', url: '../news/extensions-and-gpt.html' },
+    { title: 'WebAssembly в 2026: JS больше не монополист', meta: 'Coding · 30.01.2026', url: '../coding/wasm-the-new-standard.html' },
+    { title: 'Как выбрать язык программирования', meta: 'Coding · 30.01.2026', url: '../coding/how-to-choose-programming-language.html' },
+    { title: 'Лучший браузер 2025', meta: 'Browsers · 15.12.2025', url: '../all/best-browser.html' },
+    { title: 'История Яндекса', meta: 'News · 13.12.2025', url: '../all/yandex-history.html' },
+    { title: 'Плагины для VS Code', meta: 'Coding · 15.12.2025', url: '../coding/vscode-plugins.html' },
+  ];
+
+  const grid = document.getElementById('alsoGrid');
+  articles.forEach(a => {
+    const el = document.createElement('a');
+    el.className = 'also-card'; el.href = a.url;
+    el.innerHTML = `<div class="also-meta">${a.meta}</div><h3>${a.title}</h3>`;
+    grid.appendChild(el);
+  });
+</script>
+</body>
+</html>

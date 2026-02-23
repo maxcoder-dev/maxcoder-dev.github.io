@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Лучшие плагины для VS Code в 2025 году | DevNews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Подборка лучших плагинов для Visual Studio Code: Python, Web, Git, оформление и производительность.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a0f;--surface:#111118;--surface2:#18181f;--border:rgba(255,255,255,0.07);--accent:#6c63ff;--accent2:#ff6584;--accent3:#43e97b;--text:#e8e8f0;--muted:#7a7a99;--card-bg:#14141c;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.4;}
+    header{position:sticky;top:0;z-index:900;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .container{max-width:1280px;margin:0 auto;padding:0 24px;}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;height:68px;}
+    .logo a{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.5px;display:flex;align-items:center;gap:8px;}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.4);opacity:0.6;}}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:14px;padding:8px 14px;border-radius:8px;transition:all 0.2s;}
+    nav a:hover{color:var(--text);background:var(--surface2);}
+    .article-wrap{max-width:780px;margin:0 auto;padding:48px 24px 80px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:8px 14px;border:1px solid var(--border);border-radius:8px;margin-bottom:36px;transition:all 0.2s;font-family:'JetBrains Mono',monospace;}
+    .back-link:hover{color:var(--text);border-color:rgba(108,99,255,0.4);background:var(--surface2);}
+    .article-meta-top{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+    .cat-badge{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);color:var(--accent);font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:0.08em;font-family:'JetBrains Mono',monospace;}
+    .article-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.65) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .views-bar{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:36px;}
+    .views-bar strong{color:var(--accent);}
+    .article-body{animation:fadeUp 0.5s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+    .article-body p{font-size:16px;color:rgba(232,232,240,0.8);line-height:1.8;margin-bottom:20px;}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.5px;color:var(--text);margin:36px 0 14px;display:flex;align-items:center;gap:10px;}
+    .section-icon{font-size:18px;}
+    .plugin-list{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:10px;}
+    .plugin-item{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start;transition:border-color 0.2s;}
+    .plugin-item:hover{border-color:rgba(108,99,255,0.3);}
+    .plugin-name{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--accent);min-width:160px;flex-shrink:0;padding-top:2px;}
+    .plugin-desc{font-size:14px;color:var(--muted);line-height:1.5;}
+    .info-card{background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--accent3);border-radius:12px;padding:20px 24px;margin:28px 0;}
+    .info-card p{margin:0;color:rgba(232,232,240,0.8);font-size:15px;}
+    .info-card strong{color:var(--accent3);}
+    .divider{border:none;border-top:1px solid var(--border);margin:48px 0 36px;}
+    .read-also h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;color:var(--text);}
+    .also-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    .also-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:all 0.2s;}
+    .also-card:hover{border-color:rgba(108,99,255,0.3);transform:translateY(-2px);background:var(--surface2);}
+    .also-card .also-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;}
+    .also-card h3{font-size:14px;font-weight:600;color:var(--text);line-height:1.4;}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:36px 0;}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--text);}
+    .footer-copy{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',monospace;margin-top:4px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:4px;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:all 0.2s;}
+    .footer-links a:hover{color:var(--text);background:var(--surface2);}
+    @media(max-width:700px){.also-grid{grid-template-columns:1fr 1fr;}.plugin-item{flex-direction:column;gap:6px;}.plugin-name{min-width:auto;}nav a{padding:8px 10px;font-size:13px;}}
+    @media(max-width:480px){.also-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo"><a href="../../index.html"><span class="logo-dot"></span>DevNews</a></div>
+    <nav>
+      <a href="../../index.html">Главная</a>
+      <a href="../../index.html">Новости</a>
+      <a href="../../about.html">О сайте</a>
+      <a href="../../contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <a href="../../index.html" class="back-link">← Назад к новостям</a>
+
+  <div class="article-meta-top">
+    <span class="cat-badge">Coding</span>
+    <span class="cat-badge" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3);color:#43e97b;">VS Code</span>
+    <span class="article-date">15.12.2025</span>
+  </div>
+
+  <h1>Лучшие плагины для VS Code в 2025 году</h1>
+
+  <div class="views-bar">👁 Просмотров: <strong id="viewsVal">—</strong></div>
+
+  <div class="article-body">
+
+    <p>Visual Studio Code — один из самых популярных редакторов кода в мире. Его главная сила — огромное количество расширений, которые делают разработку быстрее, удобнее и приятнее.</p>
+
+    <h2><span class="section-icon">⚡</span> Must-have плагины</h2>
+
+    <ul class="plugin-list">
+      <li class="plugin-item">
+        <div class="plugin-name">Prettier</div>
+        <div class="plugin-desc">Автоматическое форматирование кода. Настраивается под любой стиль проекта, работает с JS, TS, CSS, HTML и многим другим.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">ESLint</div>
+        <div class="plugin-desc">Поиск ошибок и проблем в JavaScript и TypeScript. Незаменим для поддержания качества кода в команде.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">GitLens</div>
+        <div class="plugin-desc">Расширенная работа с Git прямо в редакторе: история изменений, аннотации, blame-информация построчно.</div>
+      </li>
+    </ul>
+
+    <h2><span class="section-icon">🐍</span> Для Python-разработчиков</h2>
+
+    <ul class="plugin-list">
+      <li class="plugin-item">
+        <div class="plugin-name">Python (Microsoft)</div>
+        <div class="plugin-desc">Автодополнение, отладка, поддержка виртуальных окружений и Jupyter Notebooks из коробки.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">Pylance</div>
+        <div class="plugin-desc">Быстрый и умный анализ типов. Значительно ускоряет работу с большими Python-проектами.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">Black Formatter</div>
+        <div class="plugin-desc">Форматирование Python-кода по стандарту Black — без споров о стиле в команде.</div>
+      </li>
+    </ul>
+
+    <h2><span class="section-icon">🌐</span> Для веб-разработки</h2>
+
+    <ul class="plugin-list">
+      <li class="plugin-item">
+        <div class="plugin-name">Live Server</div>
+        <div class="plugin-desc">Мгновенный предпросмотр сайта с автообновлением при изменении файлов.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">Auto Rename Tag</div>
+        <div class="plugin-desc">Автоматически переименовывает парный HTML-тег при редактировании.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">Tailwind IntelliSense</div>
+        <div class="plugin-desc">Подсказки и автодополнение для Tailwind CSS классов прямо в редакторе.</div>
+      </li>
+    </ul>
+
+    <h2><span class="section-icon">🎨</span> Визуал и удобство</h2>
+
+    <ul class="plugin-list">
+      <li class="plugin-item">
+        <div class="plugin-name">Material Icon Theme</div>
+        <div class="plugin-desc">Красивые и понятные иконки для файлов и папок в дереве проекта.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">One Dark Pro</div>
+        <div class="plugin-desc">Одна из самых популярных тёмных тем для VS Code — приятный контраст и читаемость.</div>
+      </li>
+      <li class="plugin-item">
+        <div class="plugin-name">Error Lens</div>
+        <div class="plugin-desc">Подсвечивает ошибки и предупреждения прямо в строке кода, без переключения на панель.</div>
+      </li>
+    </ul>
+
+    <div class="info-card">
+      <p><strong>Совет:</strong> Не перегружайте редактор расширениями — каждый активный плагин потребляет память. Устанавливайте только то, что реально используете каждый день.</p>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <section class="read-also">
+    <h2>Читайте также</h2>
+    <div class="also-grid" id="alsoGrid"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-logo">DevNews</div>
+      <div class="footer-copy">© 2026</div>
+    </div>
+    <div class="footer-links">
+      <a href="../../about.html">О сайте</a>
+      <a href="../../privacy.html">Конфиденциальность</a>
+      <a href="../../terms.html">Соглашение</a>
+      <a href="../../contacts.html">Контакты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const key = 'views-vscode-plugins';
+  let views = parseInt(localStorage.getItem(key) || '0') + 1;
+  localStorage.setItem(key, views);
+  document.getElementById('viewsVal').textContent = views;
+
+  const articles = [
+    { title: 'Как выбрать язык программирования', meta: 'Coding · 30.01.2026', url: 'how-to-choose-programming-language.html' },
+    { title: 'Лучший редактор кода для Python', meta: 'Coding · 15.12.2025', url: 'best-python-code-editor.html' },
+    { title: 'WebAssembly в 2026', meta: 'Coding · 30.01.2026', url: 'wasm-the-new-standard.html' },
+    { title: 'OpenAI представила GPT-5 для разработчиков', meta: 'News · 10.01.2026', url: '../news/gpt5-for-devs.html' },
+    { title: 'Как залить сайт в интернет', meta: 'Sites · 15.12.2025', url: '../all/how-to-publish-site.html' },
+    { title: 'Сравнение дистрибутивов Linux', meta: 'Linux · 14.12.2025', url: '../all/linux-distros-comparison.html' },
+  ];
+
+  const grid = document.getElementById('alsoGrid');
+  articles.forEach(a => {
+    const el = document.createElement('a');
+    el.className = 'also-card'; el.href = a.url;
+    el.innerHTML = `<div class="also-meta">${a.meta}</div><h3>${a.title}</h3>`;
+    grid.appendChild(el);
+  });
+</script>
+</body>
+</html>
