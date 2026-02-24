@@ -1,0 +1,194 @@
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface2: #18181f;
+      --border: rgba(255,255,255,0.07);
+      --accent: #6c63ff;
+      --text: #e8e8f0;
+      --muted: #7a7a99;
+      --card-bg: #14141c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 1000; opacity: 0.4;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 900;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+    .header-inner {
+      display: flex; justify-content: space-between; align-items: center; height: 68px;
+    }
+
+    .logo a {
+      font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800;
+      color: var(--text); text-decoration: none; letter-spacing: -0.5px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .logo-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    nav { display: flex; align-items: center; gap: 4px; }
+
+    nav a {
+      text-decoration: none; color: var(--muted); font-weight: 500;
+      font-size: 14px; padding: 8px 14px; border-radius: 8px; transition: all 0.2s;
+    }
+
+    nav a:hover { color: var(--text); background: var(--surface2); }
+
+    /* CONTENT */
+    .page-wrap {
+      max-width: 700px; margin: 0 auto; padding: 60px 24px 80px;
+    }
+
+    .page-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.3);
+      color: var(--accent); font-size: 11px; font-weight: 600;
+      padding: 5px 12px; border-radius: 999px; margin-bottom: 24px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .page-lead { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 48px; }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), #a78bfa, #60a5fa);
+    }
+
+    .contact-card::after {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(108,99,255,0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-label {
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .contact-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .email-link {
+      display: inline-flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--text);
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 700; letter-spacing: -0.5px;
+      transition: color 0.2s;
+      margin-bottom: 24px;
+    }
+
+    .email-link:hover { color: var(--accent); }
+
+    .email-icon {
+      width: 44px; height: 44px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.3);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .email-link:hover .email-icon { background: rgba(108,99,255,0.25); }
+
+    .contact-note {
+      color: var(--muted); font-size: 14px; line-height: 1.6;
+      padding-top: 20px; border-top: 1px solid var(--border);
+    }
+
+    .response-badge {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+      background: rgba(67,233,123,0.1); border: 1px solid rgba(67,233,123,0.25);
+      color: #43e97b; font-size: 12px; font-weight: 600;
+      padding: 5px 12px; border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .response-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: #43e97b;
+    }
+
+    footer {
+      background: var(--surface); border-top: 1px solid var(--border); padding: 36px 0;
+    }
+
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px; color: var(--text); }
+    .footer-copy { color: var(--muted); font-size: 13px; font-family: 'JetBrains Mono', monospace; margin-top: 4px; }
+
+    .footer-links { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    .footer-links a {
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      padding: 6px 12px; border-radius: 6px; transition: all 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); background: var(--surface2); }
+
+    @media (max-width: 600px) {
+      .email-link { font-size: 18px; }
+      nav a { padding: 8px 10px; font-size: 13px; }
+    }
