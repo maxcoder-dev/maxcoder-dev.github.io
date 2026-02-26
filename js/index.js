@@ -134,6 +134,14 @@ const ARTICLES_DATA = [
         date: "10.01.2026",
         tag: "News",
         dataTags: "news ai coding"
+    },
+        {
+        title: "История Google Chrome",
+        desc: "История Google Chrome: от дерзкого новичка до короля браузеров",
+        link: "articles/all/chrome-history.html",
+        date: "26.02.2026",
+        tag: "Browsers",
+        dataTags: "coding browsers"
     }
 ];
 
