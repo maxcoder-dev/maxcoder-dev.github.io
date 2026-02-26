@@ -1,0 +1,71 @@
+:root {
+  --bg: #0a0a0f;
+  --text: #eaeaf0;
+  --accent: #7c7cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: radial-gradient(circle at top, #12121a, var(--bg));
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.error h1 {
+  font-size: 8rem;
+  margin: 0;
+  color: var(--accent);
+  letter-spacing: 4px;
+}
+
+.error p {
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.actions a {
+  padding: 12px 22px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.actions a:hover {
+  background: var(--accent);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
